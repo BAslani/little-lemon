@@ -1,6 +1,14 @@
 function Main() {
     return (
-        <main></main>
+        <main>
+            <hr/>
+            <h2>main content will be here</h2>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <hr/>
+        </main>
     )
 }
 

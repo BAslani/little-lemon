@@ -1,38 +1,54 @@
-.App {
-  text-align: center;
+/* remove defaults */
+*,
+::after,
+::before{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* set variables */
+:root {
+  --primary-gold: #F4CE14;
+  --primary-darkGreen: #495E57;
+  --secondary-gray: #E4E4E4;
+  --secondary-black: #1E1E1E;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* global */
+a {
+  text-decoration: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+li {
+  list-style: none;
+}
+
+.sectionCenter {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* header */
+.header {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: 1fr;
+  column-gap: 2rem;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.navLinks {
+  display: grid;
+  grid-template-columns: repeat(6, auto);
+  column-gap: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navLinks a {
+  font-family: Markazi Text;
+  font-weight: 600;
+  font-size: 1.25rem;
+  color: var(--secondary-black);
 }

@@ -1,6 +1,9 @@
+import Logo from "./Assets/Logo .svg"
+
 function Footer() {
     return (
         <footer>
+            <img src={Logo} className="logo" alt="logo"/>
             <div className="navigation">
                 <h3>Navigation</h3>
                 <ul>
