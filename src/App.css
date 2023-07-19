@@ -1,7 +1,7 @@
 /* remove defaults */
 *,
 ::after,
-::before{
+::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -24,13 +24,93 @@ li {
   list-style: none;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1rem;
+}
+
 .sectionCenter {
   max-width: 900px;
   margin: 0 auto;
 }
 
 /* header */
-.header {
+
+.navLinks .link {
+  font-family: Markazi Text, serif;
+  color: var(--secondary-black);
+  font-weight: 600;
+  font-size: 1.5rem;
+  transition: all 0.5s;
+}
+
+.navLinks li {
+  padding: 1rem;
+  text-align: left;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.navLinks li:hover .link{
+  color: var(--primary-gold);
+}
+
+@media screen and (max-width:768px){
+  .header {
+    margin: 2rem 0;
+    text-align: center;
+  }
+
+  .navLinks li:hover {
+    background: var(--primary-darkGreen);
+  }
+}
+
+.navLinks {
+  background: #E4E4E4;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 5px #495E57;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-100%, 6rem);
+  transition: all 0.5s;
+}
+
+.showLinks {
+  transform: translate(0, 6rem);
+}
+
+.toggle{
+  position: absolute;
+  top: 2.5rem;
+  left: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.basket{
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+@media screen and (min-width:768px){
+  .toggle, .basket{
+    display: none;
+  }
+  .header {
   margin-top: 3rem;
   margin-bottom: 3rem;
   display: grid;
@@ -44,11 +124,19 @@ li {
   display: grid;
   grid-template-columns: repeat(6, auto);
   column-gap: 1rem;
+  align-items: center;
+  transform: translate(0);
+  background: transparent;
+  box-shadow: none;
+  position: relative;
 }
+  }
 
-.navLinks a {
-  font-family: Markazi Text;
-  font-weight: 600;
-  font-size: 1.25rem;
-  color: var(--secondary-black);
-}
+
+
+
+
+
+
+
+/* footer */

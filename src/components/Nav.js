@@ -1,24 +1,24 @@
-function Nav() {
+function Nav(props) {
     return (
         <nav>
-            <ul className="navLinks">
+            <ul className={`navLinks ${props.class}`}>
                 <li>
-                    <a href="#home">Home</a>
+                    <a href="#home" className="link">Home</a>
                 </li>
                 <li>
-                    <a href="#about">About</a>
+                    <a href="#about" className="link">About</a>
                 </li>
                 <li>
-                    <a href="#menu">Menu</a>
+                    <a href="#menu" className="link">Menu</a>
                 </li>
                 <li>
-                    <a href="#Reservations">Reservations</a>
+                    <a href="#Reservations" className="link">Reservations</a>
                 </li>
                 <li>
-                    <a href="#orderOnline">Order Online</a>
+                    <a href="#orderOnline" className="link">Order Online</a>
                 </li>
                 <li>
-                    <a href="#login">Login</a>
+                    <a href="#login" className="link">Login</a>
                 </li>
             </ul>
         </nav>
