@@ -8,7 +8,7 @@ import {useState} from "react"
 function Header() {
     const [navbarOpen, setNavbarOpen] = useState('');
     return (
-        <header className="header sectionCenter">
+        <header className="header">
             <button className="toggle" onClick={()=>{
                 if(navbarOpen === '') {setNavbarOpen('showLinks')}
                 else {setNavbarOpen('')}

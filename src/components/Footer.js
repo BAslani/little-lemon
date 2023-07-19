@@ -2,7 +2,7 @@ import Logo from "./Assets/Logo .svg"
 
 function Footer() {
     return (
-        <footer className="sectionCenter">
+        <footer>
             <img src={Logo} className="logo" alt="logo"/>
             <div className="navigation">
                 <h3>Navigation</h3>

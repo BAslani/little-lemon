@@ -1,10 +1,12 @@
 import greekSalad from "./Assets/greek salad.jpg"
 import bruchetta from "./Assets/bruchetta.svg"
 import lemonDessert from "./Assets/lemon dessert.jpg"
+import owners1 from "./Assets/Mario and Adrian A.jpg"
+import owners2 from "./Assets/Mario and Adrian b.jpg"
 
 function Main() {
     return (
-        <main className="sectionCenter">
+        <main>
             <div className="heroContainer">
                 <section className="hero">
                     <h1 className="title">Little Lemon</h1>
@@ -15,7 +17,7 @@ function Main() {
                     <button className="btn">Reserve a Table</button>
                 </section>
             </div>
-            <section className="specials sectionCenter">
+            <section className="specials">
                 <div className="specialsHeader">
                     <h2>This week's Special</h2>
                     <button className="btn">Online Menu</button>
@@ -57,6 +59,24 @@ function Main() {
                         </p>
                         <p>Order a Delivery </p>
                     </article>
+                </div>
+            </section>
+            <section className="testimonials">
+                <h1>Testimonials</h1>
+            </section>
+            <section className="about">
+                <header>
+                    <h1 className="aboutTitle">Little Lemon</h1>
+                    <h2 className="location">Chicago</h2>
+                    <p>
+                        We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
+                    </p>
+                </header>
+                <div className="aboutImgContainer1">
+                    <img src={owners1} alt="owners"/>
+                </div>
+                <div className="aboutImgContainer2">
+                    <img src={owners2} alt="owners"/>
                 </div>
             </section>
         </main>

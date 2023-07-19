@@ -250,6 +250,37 @@ img {
   padding: 1rem;
 }
 
+/* testimonials */
+.testimonials {
+  color: var(--primary-gold);
+  height: 20rem;
+  background: var(--primary-darkGreen);
+  display: grid;
+  place-items: center;
+}
+
+/* about */
+.about {
+  width: 100%;
+  padding: 2rem;
+  display: grid;
+  place-items: center;
+}
+
+.about .location {
+  color: var(--secondary-black);
+}
+
+.about .aboutImgContainer1 {
+  margin-top: 2rem;
+  width: 13rem;
+  margin-left: 8rem;
+}
+.about .aboutImgContainer2 {
+  margin-top: -5rem;
+  width: 13rem;
+  margin-right: 8rem;
+}
 
 
 /* footer */
