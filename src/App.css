@@ -140,3 +140,18 @@ h3 {
 
 
 /* footer */
+footer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1rem;
+  background: var(--secondary-black);
+}
+
+footer .link {
+  color: var(--secondary-gray);
+}
+
+footer .logo {
+  align-self: center;
+  margin-right: 1rem;
+}

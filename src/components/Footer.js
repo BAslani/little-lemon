@@ -2,50 +2,50 @@ import Logo from "./Assets/Logo .svg"
 
 function Footer() {
     return (
-        <footer>
+        <footer className="sectionCenter">
             <img src={Logo} className="logo" alt="logo"/>
             <div className="navigation">
                 <h3>Navigation</h3>
                 <ul>
                 <li>
-                    <a href="#home">Home</a>
+                    <a href="#home" className="link">Home</a>
                 </li>
                 <li>
-                    <a href="#about">About</a>
+                    <a href="#about" className="link">About</a>
                 </li>
                 <li>
-                    <a href="#menu">Menu</a>
+                    <a href="#menu" className="link">Menu</a>
                 </li>
                 <li>
-                    <a href="#Reservations">Reservations</a>
+                    <a href="#Reservations" className="link">Reservations</a>
                 </li>
                 <li>
-                    <a href="#orderOnline">Order Online</a>
+                    <a href="#orderOnline" className="link">Order Online</a>
                 </li>
                 <li>
-                    <a href="#login">Login</a>
+                    <a href="#login" className="link">Login</a>
                 </li>
                 </ul>
             </div>
             <div className="contacts">
                 <h3>Contacts</h3>
                 <ul>
-                    <li>Email</li>
-                    <li>Phone number</li>
-                    <li>Address</li>
+                    <li className="link">Email</li>
+                    <li className="link">Phone number</li>
+                    <li className="link">Address</li>
                 </ul>
             </div>
             <div className="socialMedia">
                 <h3>Contacts</h3>
                 <ul>
                     <li>
-                        <a href="https://www.instagram.com/">Instagram</a>
+                        <a href="https://www.instagram.com/" className="link">Instagram</a>
                     </li>
                     <li>
-                        <a href="https://www.twitter.com/r">Twitter</a>
+                        <a href="https://www.twitter.com/r" className="link">Twitter</a>
                     </li>
                     <li>
-                        <a href="https://telegram.org/">Telegram</a>
+                        <a href="https://telegram.org/" className="link">Telegram</a>
                     </li>
                 </ul>
             </div>
