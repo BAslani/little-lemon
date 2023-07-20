@@ -2,6 +2,9 @@ import React, { useReducer, useEffect } from 'react';
 import { VStack, HStack } from '@chakra-ui/react';
 import restaurant1 from './Assets/restaurant chef B.jpg';
 import restaurant2 from './Assets/restaurant.jpg';
+import * as Yup from "yup";
+import { useFormik } from "formik";
+import useSubmit from "../hooks/useSubmit";
 
 // Reducer function to handle state changes for availableTimes
 const availableTimesReducer = (state, action) => {
@@ -19,6 +22,7 @@ const initializeTimes = () => {
 };
 
 const BookingForm = ({ selectedDate, setSelectedDate, selectedTime, setSelectedTime, numberOfGuests, setNumberOfGuests, selectedOccasion, setSelectedOccasion }) => {
+    const { submit } = useSubmit();
     // Initialize availableTimes using useReducer and the availableTimesReducer
     const [availableTimes, dispatch] = useReducer(availableTimesReducer, [], initializeTimes);
 
@@ -28,21 +32,29 @@ const BookingForm = ({ selectedDate, setSelectedDate, selectedTime, setSelectedT
         dispatch({ type: 'INITIALIZE_TIMES' });
     };
 
+    const formik = useFormik({
+        initialValues: {
+          date: "",
+          time: "",
+          guests: "",
+          occasion: "",
+        },
+        onSubmit: (values, { resetForm }) => {
+          submit("", values);
+        },
+        validationSchema: Yup.object({
+            date: Yup.string().required("Required"),
+            time: Yup.string().required("Required"),
+            occasion: Yup.string().required("Required"),
+            guests: Yup.number().required("Required"),
+        }),
+      });
+
     // Listen for changes in selectedDate and update availableTimes accordingly
     useEffect(() => {
         updateTimes();
     }, [selectedDate]);
 
-    // Handle form submission
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        console.log('Form submitted!');
-        console.log('Selected Date:', selectedDate);
-        console.log('Selected Time:', selectedTime);
-        console.log('Number of Guests:', numberOfGuests);
-        console.log('Selected Occasion:', selectedOccasion);
-    };
     return (
         <section className='formSection'>
             <section className="heroInfo">
@@ -58,7 +70,7 @@ const BookingForm = ({ selectedDate, setSelectedDate, selectedTime, setSelectedT
             </section>
             <form
                 className='form sectionCenter'
-                onSubmit={handleSubmit}
+                onSubmit={formik.handleSubmit}
             >
                 <VStack w="960px" maxWidth="100vw">
                     <HStack>
@@ -66,7 +78,7 @@ const BookingForm = ({ selectedDate, setSelectedDate, selectedTime, setSelectedT
                         <input
                             type="date"
                             id="res-date"
-                            value={selectedDate}
+                            value={formik.values.date}
                             placeholder='Date'
                             onChange={(e) => setSelectedDate(e.target.value)}
                         />
@@ -74,7 +86,7 @@ const BookingForm = ({ selectedDate, setSelectedDate, selectedTime, setSelectedT
                         <label htmlFor="res-time">Time</label>
                         <select
                             id="res-time"
-                            value={selectedTime}
+                            value={formik.values.time}
                             onChange={(e) => setSelectedTime(e.target.value)}
                         >
                             {availableTimes.map((time) => (
@@ -89,14 +101,14 @@ const BookingForm = ({ selectedDate, setSelectedDate, selectedTime, setSelectedT
                         min="1"
                         max="10"
                         id="guests"
-                        value={numberOfGuests}
+                        value={formik.values.guests}
                         onChange={(e) => setNumberOfGuests(parseInt(e.target.value))}
                     />
 
                     <label htmlFor="occasion">Occasion</label>
                     <select
                         id="occasion"
-                        value={selectedOccasion}
+                        value={formik.values.occasion}
                         onChange={(e) => setSelectedOccasion(e.target.value)}
                     >
                         <option value="Birthday">Birthday</option>
