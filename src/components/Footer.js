@@ -3,7 +3,7 @@ import Logo from "./Assets/Logo .svg"
 function Footer() {
     return (
         <footer className="footerSection">
-            <section className="footer">
+            <section className="footer sectionCenter">
                 <img src={Logo} className="logo" alt="logo" />
                 <div className="navigation">
                     <h3>Navigation</h3>
@@ -18,7 +18,7 @@ function Footer() {
                             <a href="#menu" className="link">Menu</a>
                         </li>
                         <li>
-                            <a href="#Reservations" className="link">Reservations</a>
+                            <a href="#Reservations" className="link">Reservation</a>
                         </li>
                         <li>
                             <a href="#orderOnline" className="link">Order Online</a>
@@ -31,8 +31,8 @@ function Footer() {
                 <div className="contacts">
                     <h3>Contacts</h3>
                     <ul>
-                        <li className="link">Email</li>
-                        <li className="link">Phone number</li>
+                        <li className="link">Lemon@gmail</li>
+                        <li className="link">202-555-0114</li>
                         <li className="link">Address</li>
                     </ul>
                 </div>

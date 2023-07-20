@@ -3,27 +3,33 @@ import bruchetta from "./Assets/bruchetta.svg"
 import lemonDessert from "./Assets/lemon dessert.jpg"
 import owners1 from "./Assets/Mario and Adrian A.jpg"
 import owners2 from "./Assets/Mario and Adrian b.jpg"
+import hero from "./Assets/restauranfood.jpg"
 
 function Main() {
     return (
         <main className="main">
             <section className="heroSection">
-                <section className="hero">
-                    <h1 className="title">Little Lemon</h1>
-                    <h2 className="location">Chicago</h2>
-                    <p>
-                        We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
-                    </p>
-                    <button className="btn">Reserve a Table</button>
-                </section>
+                <article className="hero sectionCenter">
+                    <section className="heroInfo">
+                        <h1 className="title">Little Lemon</h1>
+                        <h2 className="location">Chicago</h2>
+                        <p>
+                            We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
+                        </p>
+                        <button className="btn">Reserve a Table</button>
+                    </section>
+                    <div className="heroImg">
+                        <img src={hero} alt="restaurant dish"/>
+                    </div>
+                </article>
             </section>
             <section className="specialsSection">
-                <section className="specials">
+                <section className="specials sectionCenter">
                     <div className="specialsHeader">
                         <h2>This week's Special</h2>
                         <button className="btn">Online Menu</button>
                     </div>
-                    <div className="cardsContainer">
+                    <section className="cardsContainer sectionCenter">
                         {/* card */}
                         <article className="card">
                             <img src={greekSalad} alt="greek salad" />
@@ -60,21 +66,21 @@ function Main() {
                             </p>
                             <p>Order a Delivery </p>
                         </article>
-                    </div>
+                    </section>
                 </section>
             </section>
             <section className="testimonialsSection">
-                <section className="testimonials">
+                <section className="testimonials sectionCenter">
                     <h1>Testimonials</h1>
                 </section>
             </section>
             <section className="aboutSection">
-                <section className="about">
+                <section className="about sectionCenter">
                     <div className="aboutInfo">
                         <h1 className="aboutTitle">Little Lemon</h1>
                         <h2 className="location">Chicago</h2>
                         <p>
-                            We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
+                            We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.We are a family owned Mediterranean restaurant, focused on traditional recipes served with a modern twist.
                         </p>
                     </div>
                     <div className="aboutImgContainer">
