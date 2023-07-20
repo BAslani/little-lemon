@@ -38,11 +38,6 @@ h3 {
   font-size: 1rem;
 }
 
-.sectionCenter {
-  max-width: 900px;
-  margin: 0 auto;
-}
-
 p {
   font-family: Karla, sans-serif;
 }
@@ -165,7 +160,7 @@ img:not("logo") {
 }
 
 /* main */
-.heroContainer {
+.heroSection {
   background: var(--primary-darkGreen);
 }
 
@@ -211,7 +206,6 @@ img:not("logo") {
 
 .cardsContainer {
   display: grid;
-  /* grid-template-columns: repeat(3, 17rem); */
   grid-auto-flow: column;
   column-gap: 2rem;
   overflow-x: scroll;
@@ -251,17 +245,20 @@ img {
 }
 
 /* testimonials */
-.testimonials {
-  color: var(--primary-gold);
+.testimonialsSection {
   height: 20rem;
   background: var(--primary-darkGreen);
+}
+
+.testimonials {
+  height: 100%;
+  color: var(--primary-gold);
   display: grid;
   place-items: center;
 }
 
 /* about */
 .about {
-  width: 100%;
   padding: 2rem;
   display: grid;
   place-items: center;
@@ -271,12 +268,12 @@ img {
   color: var(--secondary-black);
 }
 
-.about .aboutImgContainer1 {
+.about .aboutImg1 {
   margin-top: 2rem;
   width: 13rem;
   margin-left: 8rem;
 }
-.about .aboutImgContainer2 {
+.about .aboutImg2 {
   margin-top: -5rem;
   width: 13rem;
   margin-right: 8rem;
@@ -284,7 +281,7 @@ img {
 
 
 /* footer */
-footer {
+.footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 1rem;
