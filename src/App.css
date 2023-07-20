@@ -287,7 +287,57 @@ footer .logo {
   align-self: center;
 }
 
-/* big screen */
+.footerSection {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ------------------------------------------------------------------ */
+
+/* Booking Page small screen*/
+.formSection .heroInfo{
+  width: 90vw;
+  max-width: 960px;
+  margin: 0 auto;
+  color: var(--secondary-gray);
+}
+
+.form label {
+  color: var(--secondary-gray);
+}
+
+.bookingFormImgcontainer {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+}
+
+.formSection {
+  background: var(--primary-darkGreen);
+  width: 100vw;
+}
+
+.form {
+  display: grid;
+  place-items: center;
+}
+
+.form .submitBtn {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form input, select {
+  width: 100%;
+  padding: 0.25rem 0.75rem;
+  max-width: 90vw;
+}
+
+/* ------------------------------------------------------------------ */
+
+/* home page big screen */
 @media screen and (min-width:768px) {
 
   .toggle,
@@ -402,5 +452,23 @@ footer .logo {
 
   .footer .link {
     transition: all 0.5s;
+  }
+  /* ------------------------------------------------------------------ */
+
+/* booking page big screen */
+
+  .form {
+    width: 90vw;
+    margin: 0 auto;
+    margin-bottom: 0;
+  }
+
+  .form .submitBtn {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .form input, select {
+    padding: 0.5rem 1rem;
   }
 }
