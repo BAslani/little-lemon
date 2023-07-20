@@ -1,24 +1,37 @@
-import React, { useState } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import { VStack, HStack } from '@chakra-ui/react';
 import restaurant1 from './Assets/restaurant chef B.jpg';
 import restaurant2 from './Assets/restaurant.jpg';
 
-const BookingForm = () => {
-    // Define state variables for the form fields
-    const [selectedDate, setSelectedDate] = useState('');
-    const [selectedTime, setSelectedTime] = useState('');
-    const [numberOfGuests, setNumberOfGuests] = useState('1');
-    const [selectedOccasion, setSelectedOccasion] = useState('Birthday');
+// Reducer function to handle state changes for availableTimes
+const availableTimesReducer = (state, action) => {
+    switch (action.type) {
+        case 'INITIALIZE_TIMES':
+            return initializeTimes();
+        default:
+            return state;
+    }
+};
 
-    // Stateful array for available times
-    const availableTimes = [
-        '16:00',
-        '17:00',
-        '18:00',
-        '19:00',
-        '20:00',
-        '21:00',
-    ];
+// Function to create the initial state for availableTimes
+const initializeTimes = () => {
+    return ['16:00', '17:00', '18:00', '19:00', '20:00', '21:00'];
+};
+
+const BookingForm = ({ selectedDate, setSelectedDate, selectedTime, setSelectedTime, numberOfGuests, setNumberOfGuests, selectedOccasion, setSelectedOccasion }) => {
+    // Initialize availableTimes using useReducer and the availableTimesReducer
+    const [availableTimes, dispatch] = useReducer(availableTimesReducer, [], initializeTimes);
+
+    // Update available times based on selected date
+    const updateTimes = () => {
+        // For now, we'll return the same available times.
+        dispatch({ type: 'INITIALIZE_TIMES' });
+    };
+
+    // Listen for changes in selectedDate and update availableTimes accordingly
+    useEffect(() => {
+        updateTimes();
+    }, [selectedDate]);
 
     // Handle form submission
     const handleSubmit = (e) => {
@@ -30,7 +43,6 @@ const BookingForm = () => {
         console.log('Number of Guests:', numberOfGuests);
         console.log('Selected Occasion:', selectedOccasion);
     };
-
     return (
         <section className='formSection'>
             <section className="heroInfo">
